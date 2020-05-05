@@ -1,0 +1,146 @@
+Command Line Arguments:
+     dir = uploaded_images/ 
+    arch = vgg 
+ dogfile = dognames.txt
+
+Pet Image Label Dictionary has 4 key-value pairs.
+Below are 4 of them:
+ 1 key:                     Dog_01.jpg  label:                        dog
+ 2 key:                     Dog_02.jpg  label:                        dog
+ 3 key:                Fighter_Jet.jpg  label:                    fighter
+ 4 key:                    Lion_01.jpg  label:                       lion
+Pet Label is ['dog']
+
+Img classification is ['labrador retriever']
+
+Match not found
+
+Index: 0, Classifiers: labrador retriever
+
+Pet Label is ['dog']
+
+Img classification is ['labrador retriever']
+
+Match not found
+
+Index: 1, Classifiers: labrador retriever
+
+Pet Label is ['fighter']
+
+Img classification is ['warplane', 'military plane']
+
+Match not found
+
+Index: 2, Classifiers: warplane
+
+Pet Label is ['lion']
+
+Img classification is ['lion', 'king of beasts', 'panthera leo']
+
+Match found
+
+Index: 3, Classifiers: lion
+
+Inside Classify Images
+
+{'Dog_01.jpg': ['dog', 'labrador retriever', 0], 'Dog_02.jpg': ['dog', 'labrador retriever', 0], 'Fighter_Jet.jpg': ['fighter', 'warplane', 0], 'Lion_01.jpg': ['lion', 'lion', 1]}
+
+Filename= Dog_01.jpg 
+pet_image Label= dog 
+Classifier Label= labrador retriever 
+match= 0
+
+Filename= Dog_02.jpg 
+pet_image Label= dog 
+Classifier Label= labrador retriever 
+match= 0
+
+Filename= Fighter_Jet.jpg 
+pet_image Label= fighter 
+Classifier Label= warplane 
+match= 0
+
+Filename= Lion_01.jpg 
+pet_image Label= lion 
+Classifier Label= lion 
+match= 1
+
+     MATCH:
+
+                   Lion_01.jpg: 
+Real:                       lion   Classifier:                           lion
+
+ NOT A MATCH:
+
+                    Dog_01.jpg: 
+Real:                        dog   Classifier:             labrador retriever
+
+                    Dog_02.jpg: 
+Real:                        dog   Classifier:             labrador retriever
+
+               Fighter_Jet.jpg: 
+Real:                    fighter   Classifier:                       warplane
+
+# Total Images 4 # Matches: 1 # NOT Matches: 3
+
+     MATCH:
+
+                   Lion_01.jpg: 
+Real:                       lion   Classifier:                           lion  
+PetLabelDog: 0  ClassLabelDog: 0
+
+ NOT A MATCH:
+
+                    Dog_01.jpg: 
+Real:                        dog   Classifier:             labrador retriever  
+PetLabelDog: 1  ClassLabelDog: 1
+
+                    Dog_02.jpg: 
+Real:                        dog   Classifier:             labrador retriever  
+PetLabelDog: 1  ClassLabelDog: 1
+
+               Fighter_Jet.jpg: 
+Real:                    fighter   Classifier:                       warplane  
+PetLabelDog: 0  ClassLabelDog: 0
+
+# Total Images 4 # Matches: 1 # NOT Matches: 3
+
+ ** Statistics from calculates_results_stats() function:
+N Images:  4  N Dog Images:  2  N NotDog Images:  2 
+Pct Corr dog: 100.0 Pct Corr NOTdog: 100.0  Pct Corr Breed:   0.0
+
+ ** Check Statistics - calculated from this function as a check:
+N Images:  4  N Dog Images:  2  N NotDog Images:  2 
+Pct Corr dog: 100.0 Pct Corr NOTdog: 100.0  Pct Corr Breed:   0.0
+
+
+*** Results Summary for CNN Model Architecture VGG ***
+N Images            :   4
+N Dog Images        :   2
+N Not-Dog Images    :   2
+n_correct_dogs      :   2
+n_correct_notdogs   :   2
+ 
+pct_correct_dogs    : 100.00
+pct_correct_breed   : 0.00
+pct_correct_notdogs : 100.00
+pct_label_matches   : 25.00
+
+** Total Elapsed Runtime: 0:0:3
++----------------+--------------+--------------------+
+| # Total Images | # Dog Images | # Not-a-Dog Images |
++----------------+--------------+--------------------+
+|       40       |      30      |         10         |
++----------------+--------------+--------------------+
+
+
+
+
++--------------------------+---------------------+-----------------+------------------+----------------+-------------------+
+| CNN Model Architecture:  | % Not-a-Dog Correct | % Dogs Corrects | % Breeds Correct | % Match Labels | Runtime (seconds) |
++--------------------------+---------------------+-----------------+------------------+----------------+-------------------+
+|          ResNet          |         90%         |       100%      |       90%        |     82.5%      |         6         |
+|         AlexNet          |         100%        |       100%      |       80%        |      75%       |         3         |
+|           VGG            |         100%        |       100%      |      93.3%       |     87.5%      |         35        |
++--------------------------+---------------------+-----------------+------------------+----------------+-------------------+
+The model VGG was the one that was able to classify 'dogs' and 'not-a-dog' with 100% accuracy and had the best performance regarding breed classification with 93.3% accuracy. The Model AlexNet was the most efficient with the fastest runtime at only 3 seconds but still images 100% accuracy for identifying dogs correctly
